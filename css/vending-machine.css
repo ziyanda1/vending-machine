@@ -1,0 +1,62 @@
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.table td{
+   text-align:center;
+   border-radius:7px;
+}
+
+.table td:hover{
+   color:green;
+   transition:transform .2s;
+   transform:scale(1.2);
+   text-align:center;
+   border-radius:7px;
+   cursor:pointer;
+}
+
+.coin_1{
+  height:90px;
+  width:90px;
+  background-image:url('../img/50 Cent.png');
+  background-repeat:no-repeat;
+  cursor:pointer;
+  background-size: 90px 90px;
+  border:none;
+}
+
+.coin_2{
+  height:90px;
+  width:90px;
+  background-image:url('../img/1 Rand.jpg');
+  background-repeat:no-repeat;
+  background-size: 90px 90px;
+  border:none;
+  cursor:pointer;
+}
+
+.coin_3{
+  height:90px;
+  width:90px;
+  background-image:url('../img/2 Rand.jpg');
+  background-repeat:no-repeat;
+  background-size: 90px 90px;
+  border:none;
+  cursor:pointer;
+}
+
+.alert{
+ text-align:center;
+}
+
+.coin_4{
+	height:90px;
+  width:90px;
+  background-image:url('../img/5 Rand.jpg');
+  background-repeat:no-repeat;
+  background-size: 90px 90px;
+  border:none;
+  cursor:pointer;
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="VendingMachineApp">
+  <head>
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/vending-machine.js"></script>
+    <link rel="stylesheet" href="css/lib/bootstrap.css">
+    <link rel="stylesheet" href="css/vending-machine.css">
+  </head>
+  <body>
+
+
+   <div class="container" ng-controller="VendingMachineController as vendingMachine">
+        <nav class="navbar navbar-dark bg-dark">
+      	   <a class="navbar-brand" href="#">Vending Machine Web Application</a>
+           <div class="navbar-header">
+             <span class="btn btn-success" ng-click="vendingMachine.reset()">Reset</span>
+           </div>
+        </nav>
+
+      <table class="table">
+      <tr>
+      	<td ng-repeat="coin in vendingMachine.coins">
+      	   <input class="coin_{{coin.id}}" type="button" ng-click="vendingMachine.addCoin(coin)"/>
+        </td>
+      </tr>
+      </table>
+        <div class="alert alert-warning" data-ng-if="vendingMachine.credit == 0.0">
+               <h5>Insert Coin!</h5>
+        </div>
+
+        <div class="alert alert-light" data-ng-if="vendingMachine.credit > 0.0">
+               <h5>Available: {{ vendingMachine.credit | number: 2}}</h5>
+        </div>
+
+      <table class="table table-bordered">
+      <tr ng-repeat="product in vendingMachine.products">
+        <td ng-click="vendingMachine.checkoutProduct(workItem)" ng-repeat="workItem in product.workItems">
+        {{workItem.name}} <span class="badge badge-info">{{workItem.available}}</span> <br/> R {{workItem.price | number: 2}}
+       </td>
+      </tr>
+      </table>
+     </div>
+  </body>
+</html>

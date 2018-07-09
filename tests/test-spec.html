@@ -1,0 +1,57 @@
+<html>
+    <head>
+        
+     
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.5.2/jasmine.min.css">
+        <script type="text/javascript" src="../js/lib/jasmine.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.5.2/jasmine-html.min.js">
+        </script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.5.2/boot.min.js">
+        </script>
+<script type="text/javascript" src="../js/lib/angular.min.js"></script>
+        <script type="text/javascript" src="../js/vending-machine.js"></script>
+       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-mocks.js"></script>
+    </head>
+    <body>
+    </body>
+    <script type="text/javascript">
+       describe('Controller: VendingMachineController', function() {
+      
+		 beforeEach(module('VendingMachineApp'));
+                 beforeEach(module('ProductServiceMock'));
+                 beforeEach(module('CoinProductServiceMock'));
+
+var productService;
+var coinService;
+                 beforeEach(inject(function(_productService_,_coinService_){
+
+   
+
+    productService = _productService_;
+    coinService = _coinService_;
+
+    spyOn(productService, 'all').and.callThrough();
+    spyOn(coinService, 'all').and.callThrough();
+
+  }));
+
+var VendingMachineController;    
+ // Initialize the controller and a mock scope.
+
+  beforeEach(inject(function($controller) {
+
+    VendingMachineController = $controller('VendingMachineController', {
+      ProductService: ProductService,
+      CoinService: CoinService
+
+    });
+
+  }));  
+
+
+ 
+       });
+
+
+     </script>
+</html>
